@@ -1,7 +1,6 @@
 minister-nfce - um aplicativo para emissão de NFC-e.
 
-Interface gráfica baseada em Tkinter moderno.
-com tema https://github.com/rdbende/Sun-Valley-ttk-theme
+Interface gráfica baseada em pyside6.
 Banco de dados sqlite3.
 Comunicação com a fazenda através da biblioteca PyNFe.
 

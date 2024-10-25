@@ -6,9 +6,9 @@ authors = ["Guto Marcicano <caugmar@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = ">=3.12,<3.14"
 pynfe = "^0.4.4"
-sv-ttk = "^2.6.0"
+pyside6 = "^6.8.0.2"
 
 
 [build-system]

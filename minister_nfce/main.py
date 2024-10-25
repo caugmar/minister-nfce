@@ -1,50 +1,66 @@
-from tkinter import *
-from tkinter import ttk
-import sv_ttk
+from PySide6.QtWidgets import QApplication, QMainWindow, QMenuBar, QMenu, QWidget, QVBoxLayout, QLabel, QLineEdit, QPushButton
+from PySide6.QtCore import Qt, Slot
+import sys
 
-def calculate(*args):
-    try:
-        value = float(feet.get())
-        meters.set(int(0.3048 * value * 10000.0 + 0.5)/10000.0)
-    except ValueError:
-        pass
+class MainWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("Minister NFC-e")
 
-root = Tk()
-root.title("Minister NFC-e")
-root.option_add('*tearOff', FALSE)
-menubar = Menu(root)
-menu_file = Menu(menubar)
-menu_edit = Menu(menubar)
-menubar.add_cascade(menu=menu_file, label='Cadastros')
-menu_file.add_command(label='Produtos e Serviços')
-menu_file.add_command(label='Clientes [Opcional]')
-menubar.add_cascade(menu=menu_edit, label='Emissão')
-root['menu'] = menubar
+        # Menu Bar
+        menu_bar = QMenuBar(self)
+        self.setMenuBar(menu_bar)
 
-mainframe = ttk.Frame(root, padding="3 3 12 12")
-mainframe.grid(column=0, row=0, sticky=(N, W, E, S))
-root.columnconfigure(0, weight=1)
-root.rowconfigure(0, weight=1)
+        # Menus
+        menu_file = QMenu("Cadastros", self)
+        menu_file.addAction("Produtos e Serviços")
+        menu_file.addAction("Clientes [Opcional]")
+        
+        menu_edit = QMenu("Emissão", self)
 
-feet = StringVar()
-meters = StringVar()
+        # Adding Menus to the MenuBar
+        menu_bar.addMenu(menu_file)
+        menu_bar.addMenu(menu_edit)
 
-feet_entry = ttk.Entry(mainframe, width=7, textvariable=feet)
-feet_entry.grid(column=2, row=1, sticky=(W, E))
+        # Main widget
+        central_widget = QWidget(self)
+        self.setCentralWidget(central_widget)
 
-ttk.Label(mainframe, textvariable=meters).grid(column=2, row=2, sticky=(W, E))
-ttk.Button(mainframe, text="Calculate", command=calculate).grid(column=3, row=3, sticky=W)
+        # Layout
+        layout = QVBoxLayout(central_widget)
 
-ttk.Label(mainframe, text="feet").grid(column=3, row=1, sticky=W)
-ttk.Label(mainframe, text="is equivalent to").grid(column=1, row=2, sticky=E)
-ttk.Label(mainframe, text="meters").grid(column=3, row=2, sticky=W)
+        # Input and output fields
+        self.feet_entry = QLineEdit()
+        self.feet_entry.setPlaceholderText("Enter feet")
+        self.meters_label = QLabel("")
 
-for child in mainframe.winfo_children(): 
-    child.grid_configure(padx=5, pady=5)
+        # Calculate button
+        calculate_button = QPushButton("Calculate")
+        calculate_button.clicked.connect(self.calculate)
 
-feet_entry.focus()
-root.bind("<Return>", calculate)
+        # Labels
+        layout.addWidget(QLabel("feet"))
+        layout.addWidget(self.feet_entry)
+        layout.addWidget(QLabel("is equivalent to"))
+        layout.addWidget(self.meters_label)
+        layout.addWidget(QLabel("meters"))
+        layout.addWidget(calculate_button)
 
-sv_ttk.use_light_theme()
-root.mainloop()
+        # Add padding and alignment
+        layout.setContentsMargins(10, 10, 10, 10)
+        layout.setAlignment(Qt.AlignTop)
 
+    @Slot()
+    def calculate(self):
+        try:
+            value = float(self.feet_entry.text())
+            meters = round(0.3048 * value, 4)
+            self.meters_label.setText(str(meters))
+        except ValueError:
+            self.meters_label.setText("")
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    window = MainWindow()
+    window.show()
+    sys.exit(app.exec())
