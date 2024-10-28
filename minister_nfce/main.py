@@ -1,5 +1,5 @@
 # File: main.py
-import sys
+import sys, os
 from PySide6.QtUiTools import QUiLoader
 from PySide6.QtWidgets import QApplication
 from PySide6.QtCore import QFile, QIODevice
@@ -7,7 +7,7 @@ from PySide6.QtCore import QFile, QIODevice
 if __name__ == "__main__":
     app = QApplication(sys.argv)
 
-    ui_file_name = "main.ui"
+    ui_file_name = os.path.join(os.path.dirname(__file__), "main.ui")
     ui_file = QFile(ui_file_name)
     if not ui_file.open(QIODevice.ReadOnly):
         print(f"Cannot open {ui_file_name}: {ui_file.errorString()}")
