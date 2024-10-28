@@ -12,6 +12,7 @@ pyside6 = "^6.8.0.2"
 
 [tool.poetry.group.dev.dependencies]
 pyinstaller = "^6.11.0"
+ipython = "^8.29.0"
 
 [build-system]
 requires = ["poetry-core"]
