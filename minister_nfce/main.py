@@ -1,7 +1,7 @@
 # File: main.py
 import sys, os
 from PySide6.QtUiTools import QUiLoader
-from PySide6.QtWidgets import QApplication
+from PySide6.QtWidgets import QApplication, QMessageBox
 from PySide6.QtCore import QFile, QIODevice
 
 class Aplicativo(QApplication):
@@ -20,11 +20,17 @@ class Aplicativo(QApplication):
             print(loader.errorString())
             sys.exit(-1)
         self.window.actionSair.triggered.connect(self.saindo)
-        self.window.buttonMensagem.clicked.connect(self.saindo)
+        self.window.buttonMensagem.clicked.connect(self.exibir_mensagem)
         self.window.show()
 
     def saindo(self):
         sys.exit(self.exec())
+
+    def exibir_mensagem(self, s):
+        dlg = QMessageBox(self.window)
+        dlg.setWindowTitle("Olá!")
+        dlg.setText("Olá para todo mundo!")
+        button = dlg.exec()
 
 if __name__ == "__main__":
     app = Aplicativo(sys.argv)
