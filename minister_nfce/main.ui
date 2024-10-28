@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>250</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Minister NFC-e</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>170</y>
+      <width>251</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Clique aqui para ver minha mensagem</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>400</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_Cadastros">
+    <property name="title">
+     <string>&amp;Cadastros</string>
+    </property>
+    <addaction name="action_Dados_da_Empresa"/>
+    <addaction name="action_Produtos_e_Servi_os"/>
+    <addaction name="actionSai_r"/>
+   </widget>
+   <widget class="QMenu" name="menuEmiss_o">
+    <property name="title">
+     <string>Emissão</string>
+    </property>
+   </widget>
+   <addaction name="menu_Cadastros"/>
+   <addaction name="menuEmiss_o"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="statusTip">
+    <string>Este aplicativo é apenas uma demonstração.</string>
+   </property>
+  </widget>
+  <action name="action_Produtos_e_Servi_os">
+   <property name="text">
+    <string>&amp;Produtos e Serviços</string>
+   </property>
+  </action>
+  <action name="action_Dados_da_Empresa">
+   <property name="text">
+    <string>&amp;Dados da Empresa</string>
+   </property>
+  </action>
+  <action name="actionSai_r">
+   <property name="text">
+    <string>Sai&amp;r</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
