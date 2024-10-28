@@ -14,7 +14,7 @@
    <string>Minister NFC-e</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="buttonMensagem">
     <property name="geometry">
      <rect>
       <x>130</x>
@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Clique aqui para ver minha mensagem</string>
+     <string>Clique &amp;aqui para ver minha mensagem</string>
     </property>
    </widget>
   </widget>
@@ -41,14 +41,15 @@
     <property name="title">
      <string>&amp;Cadastros</string>
     </property>
-    <addaction name="action_Dados_da_Empresa"/>
-    <addaction name="action_Produtos_e_Servi_os"/>
-    <addaction name="actionSai_r"/>
+    <addaction name="actionDadosDaEmpresa"/>
+    <addaction name="actionProdutosServicos"/>
+    <addaction name="actionSair"/>
    </widget>
    <widget class="QMenu" name="menuEmiss_o">
     <property name="title">
-     <string>Emissão</string>
+     <string>&amp;Emissão</string>
     </property>
+    <addaction name="actionEmitirNfce"/>
    </widget>
    <addaction name="menu_Cadastros"/>
    <addaction name="menuEmiss_o"/>
@@ -58,19 +59,24 @@
     <string>Este aplicativo é apenas uma demonstração.</string>
    </property>
   </widget>
-  <action name="action_Produtos_e_Servi_os">
+  <action name="actionProdutosServicos">
    <property name="text">
     <string>&amp;Produtos e Serviços</string>
    </property>
   </action>
-  <action name="action_Dados_da_Empresa">
+  <action name="actionDadosDaEmpresa">
    <property name="text">
     <string>&amp;Dados da Empresa</string>
    </property>
   </action>
-  <action name="actionSai_r">
+  <action name="actionSair">
    <property name="text">
     <string>Sai&amp;r</string>
+   </property>
+  </action>
+  <action name="actionEmitirNfce">
+   <property name="text">
+    <string>&amp;Emitir NFC-e</string>
    </property>
   </action>
  </widget>
