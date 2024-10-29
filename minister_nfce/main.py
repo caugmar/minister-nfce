@@ -4,10 +4,10 @@ from PySide6.QtUiTools import QUiLoader
 from PySide6.QtWidgets import QApplication, QMessageBox
 from PySide6.QtCore import QFile, QIODevice
 
-class Aplicativo(QApplication):
+class Aplicativo:  # Mover de subclasse para composição
 
-    def __init__(self, arg):
-        super().__init__(arg)
+    def __init__(self):
+        self.app = QApplication(sys.argv)
         ui_file_name = os.path.join(os.path.dirname(__file__), "main.ui")
         ui_file = QFile(ui_file_name)
         if not ui_file.open(QIODevice.ReadOnly):
@@ -24,15 +24,18 @@ class Aplicativo(QApplication):
         self.window.show()
 
     def saindo(self):
-        sys.exit(self.exec())
+        sys.exit(self.app.exec())
 
     def exibir_mensagem(self, s):
+        self.window.buttonMensagem.setText("Você me clicou!")
         dlg = QMessageBox(self.window)
         dlg.setWindowTitle("Olá!")
-        dlg.setText("Olá para todo mundo!")
+        nome = self.window.editNome.text().strip()
+        dlg.setText("Olá para todo mundo!\nE olá para você, " + nome +
+                    "!")
         button = dlg.exec()
 
 if __name__ == "__main__":
-    app = Aplicativo(sys.argv)
-    app.exec()
+    apl = Aplicativo()
+    apl.app.exec()
 
