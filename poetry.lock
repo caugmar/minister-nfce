@@ -660,6 +660,17 @@ files = [
 tests = ["pytest"]
 
 [[package]]
+name = "pybuilder"
+version = "0.13.13"
+description = "PyBuilder — an easy-to-use build automation tool for Python."
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "pybuilder-0.13.13-py3-none-any.whl", hash = "sha256:f0b1436402bc14874e50b55eaa3225f5d42eafe7272a01f097ecc83d7d66c921"},
+    {file = "pybuilder-0.13.13.tar.gz", hash = "sha256:7e10fe8a39ab4854080bc6c702c70b3db8241fde577e12a7059a3696373d39be"},
+]
+
+[[package]]
 name = "pycparser"
 version = "2.22"
 description = "C parser in Python"
@@ -982,4 +993,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.12,<3.14"
-content-hash = "4fed258b6b98b410c221c0efd017a33773c83895b9ae1589cccb7d70ddb174b7"
+content-hash = "41a0d1bb7b4436043a7ce1a5d6710947c7ef8240fc5a153aad09960edda4efe4"
