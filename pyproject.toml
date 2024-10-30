@@ -10,6 +10,7 @@ python = ">=3.12,<3.14"
 pynfe = "^0.4.4"
 pyside6 = "^6.8.0.2"
 weasyprint = "^62.3"
+chevron = "^0.14.0"
 
 [tool.poetry.group.dev.dependencies]
 pyinstaller = "^6.11.0"
