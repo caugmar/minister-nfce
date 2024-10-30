@@ -80,8 +80,15 @@
     </property>
     <addaction name="actionEmitirNfce"/>
    </widget>
+   <widget class="QMenu" name="menu_Relat_rios">
+    <property name="title">
+     <string>&amp;Relatórios</string>
+    </property>
+    <addaction name="actionDemonstracao"/>
+   </widget>
    <addaction name="menu_Cadastros"/>
    <addaction name="menuEmiss_o"/>
+   <addaction name="menu_Relat_rios"/>
   </widget>
   <widget class="QStatusBar" name="statusbar">
    <property name="statusTip">
@@ -106,6 +113,11 @@
   <action name="actionEmitirNfce">
    <property name="text">
     <string>&amp;Emitir NFC-e</string>
+   </property>
+  </action>
+  <action name="actionDemonstracao">
+   <property name="text">
+    <string>&amp;Demonstração</string>
    </property>
   </action>
  </widget>

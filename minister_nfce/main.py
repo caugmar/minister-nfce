@@ -20,6 +20,7 @@ class Aplicativo:  # Mover de subclasse para composição
             print(loader.errorString())
             sys.exit(-1)
         self.window.actionSair.triggered.connect(self.saindo)
+        self.window.actionDemonstracao.triggered.connect(self.exibir_relatorio_demonstracao)
         self.window.buttonMensagem.clicked.connect(self.exibir_mensagem)
         self.window.show()
 
@@ -33,7 +34,13 @@ class Aplicativo:  # Mover de subclasse para composição
         nome = self.window.editNome.text().strip()
         dlg.setText("Olá para todo mundo!\nE olá para você, " + nome +
                     "!")
-        button = dlg.exec()
+        resposta = dlg.exec()
+
+    def exibir_relatorio_demonstracao(self, s):
+        dlg = QMessageBox(self.window)
+        dlg.setWindowTitle("Relatório Demonstrativo")
+        dlg.setText("Aqui virá o relatório em formato PDF.")
+        resposta = dlg.exec()
 
 if __name__ == "__main__":
     apl = Aplicativo()
