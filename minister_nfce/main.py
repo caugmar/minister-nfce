@@ -4,7 +4,7 @@ from PySide6.QtUiTools import QUiLoader
 from PySide6.QtWidgets import QApplication, QMessageBox
 from PySide6.QtCore import QFile, QIODevice
 import webbrowser
-from relatorio import gerar
+from minister_nfce.relatorio import gerar
 
 class Aplicativo:  # Mover de subclasse para composição
 
