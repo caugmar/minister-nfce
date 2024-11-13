@@ -21,3 +21,4 @@ def build(project):
 def clean(project):
     """Tarefa que remove os diretórios dist/, build/ e __pycache__"""
     os.system("rm -rf dist/ build/ __pycache__")
+    os.system("rm relatorio_vendas_outubro_2024.pdf")

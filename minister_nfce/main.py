@@ -3,6 +3,8 @@ import sys, os
 from PySide6.QtUiTools import QUiLoader
 from PySide6.QtWidgets import QApplication, QMessageBox
 from PySide6.QtCore import QFile, QIODevice
+import webbrowser
+from relatorio import gerar
 
 class Aplicativo:  # Mover de subclasse para composição
 
@@ -37,10 +39,8 @@ class Aplicativo:  # Mover de subclasse para composição
         resposta = dlg.exec()
 
     def exibir_relatorio_demonstracao(self, s):
-        dlg = QMessageBox(self.window)
-        dlg.setWindowTitle("Relatório Demonstrativo")
-        dlg.setText("Aqui virá o relatório em formato PDF.")
-        resposta = dlg.exec()
+        nome = gerar()
+        webbrowser.open(nome)
 
 if __name__ == "__main__":
     apl = Aplicativo()
