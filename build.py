@@ -4,8 +4,8 @@ import os
 
 use_plugin("python.core")
 
-name = "my_project"
-default_task = "build"
+name = "minister_nfce"
+default_task = "run"
 
 @init
 def initialize(project):
@@ -22,3 +22,9 @@ def clean(project):
     """Tarefa que remove os diretórios dist/, build/ e __pycache__"""
     os.system("rm -rf dist/ build/ __pycache__")
     os.system("rm relatorio_vendas_outubro_2024.pdf")
+
+@task
+def run(project):
+    """Tarefa que executa o programa principal"""
+    os.system("python minister_nfce/main.py")
+
