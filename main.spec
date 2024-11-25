@@ -5,7 +5,7 @@ a = Analysis(
     ['minister_nfce/main.py', 'minister_nfce/relatorio.py'],
     pathex=[],
     binaries=[],
-    datas=[('minister_nfce/main.ui', '.')],
+    datas=[('minister_nfce/*.ui', '.')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},

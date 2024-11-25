@@ -23,6 +23,7 @@ class Aplicativo:  # Mover de subclasse para composição
             sys.exit(-1)
         self.window.actionSair.triggered.connect(self.saindo)
         self.window.actionDemonstracao.triggered.connect(self.exibir_relatorio_demonstracao)
+        self.window.actionEmitirNfce.triggered.connect(self.emitir_nfce)
         self.window.buttonMensagem.clicked.connect(self.exibir_mensagem)
         self.window.show()
 
@@ -41,6 +42,17 @@ class Aplicativo:  # Mover de subclasse para composição
     def exibir_relatorio_demonstracao(self, s):
         nome = gerar()
         webbrowser.open(nome)
+
+    def emitir_nfce(self, s):
+        ui_file_name = os.path.join(os.path.dirname(__file__), "emitir_nfce.ui")
+        ui_file = QFile(ui_file_name)
+        if not ui_file.open(QIODevice.ReadOnly):
+            print(f"Cannot open {ui_file_name}: {ui_file.errorString()}")
+            sys.exit(-1)
+        loader = QUiLoader()
+        self.dialogo = loader.load(ui_file)
+        ui_file.close()
+        self.dialogo.show()
 
 if __name__ == "__main__":
     apl = Aplicativo()

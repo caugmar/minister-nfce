@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>NFCeForm</class>
+ <widget class="QWidget" name="NFCeForm">
+  <property name="windowTitle">
+   <string>Formulário de NFC-e</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <!-- Identificação da NFC-e -->
+   <item>
+    <widget class="QGroupBox" name="groupBox_identificacao">
+     <property name="title">
+      <string>Identificação da NFC-e</string>
+     </property>
+     <layout class="QFormLayout" name="formLayout_identificacao">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_numero">
+        <property name="text">
+         <string>Número</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="lineEdit_numero"/>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_serie">
+        <property name="text">
+         <string>Série</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="lineEdit_serie"/>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_data_hora">
+        <property name="text">
+         <string>Data e Hora da Emissão</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QDateTimeEdit" name="dateTimeEdit_data_hora"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <!-- Dados do Emitente -->
+   <item>
+    <widget class="QGroupBox" name="groupBox_emitente">
+     <property name="title">
+      <string>Dados do Emitente</string>
+     </property>
+     <layout class="QFormLayout" name="formLayout_emitente">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_cnpj">
+        <property name="text">
+         <string>CNPJ</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="lineEdit_cnpj"/>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_ie">
+        <property name="text">
+         <string>Inscrição Estadual</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="lineEdit_ie"/>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_nome">
+        <property name="text">
+         <string>Nome ou Razão Social</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="lineEdit_nome"/>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_endereco">
+        <property name="text">
+         <string>Endereço</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QLineEdit" name="lineEdit_endereco"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <!-- Dados do Destinatário -->
+   <item>
+    <widget class="QGroupBox" name="groupBox_destinatario">
+     <property name="title">
+      <string>Dados do Destinatário</string>
+     </property>
+     <layout class="QFormLayout" name="formLayout_destinatario">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_cpf_cnpj">
+        <property name="text">
+         <string>CPF ou CNPJ</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="lineEdit_cpf_cnpj"/>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_nome_cliente">
+        <property name="text">
+         <string>Nome</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="lineEdit_nome_cliente"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <!-- Botões de ação -->
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_buttons">
+     <item>
+      <widget class="QPushButton" name="button_save">
+       <property name="text">
+        <string>Salvar</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="button_cancel">
+       <property name="text">
+        <string>Cancelar</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
