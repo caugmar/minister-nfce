@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>NFCeForm</class>
+ <widget class="QWidget" name="NFCeForm">
+  <property name="windowTitle">
+   <string>Emitir NFCe</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="lblCliente">
+      <property name="text">
+       <string>Cliente:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QComboBox" name="cmbCliente"/>
+    </item>
+    <item>
+     <widget class="QLabel" name="lblItens">
+      <property name="text">
+       <string>Itens:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTableWidget" name="tableItens">
+      <property name="columnCount">
+       <number>3</number>
+      </property>
+      <column>
+       <property name="text">
+        <string>Produto</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Quantidade</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Preço</string>
+       </property>
+      </column>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btnAdicionarItem">
+      <property name="text">
+       <string>Adicionar Item</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btnEmitir">
+      <property name="text">
+       <string>Emitir NFCe</string>
+      </property>
+     </widget>
+    </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

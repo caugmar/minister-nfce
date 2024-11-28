@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CustomerForm</class>
+ <widget class="QWidget" name="CustomerForm">
+  <property name="windowTitle">
+   <string>Cadastrar Cliente</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="lblNome">
+      <property name="text">
+       <string>Nome:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="txtNome"/>
+    </item>
+    <item>
+     <widget class="QLabel" name="lblCPF">
+      <property name="text">
+       <string>CPF:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="txtCPF"/>
+    </item>
+    <item>
+     <widget class="QLabel" name="lblEndereco">
+      <property name="text">
+       <string>Endereço:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="txtEndereco"/>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btnSalvar">
+      <property name="text">
+       <string>Salvar</string>
+      </property>
+     </widget>
+    </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

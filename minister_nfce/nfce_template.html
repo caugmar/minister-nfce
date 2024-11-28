@@ -1,0 +1,14 @@
+<html>
+<head><title>{{ nota }}</title></head>
+<body>
+    <h1>Nota Fiscal Eletrônica</h1>
+    <p>Emitente: {{ empresa.nome }}</p>
+    <p>Cliente: {{ cliente.nome }}</p>
+    <h2>Itens</h2>
+    <ul>
+    {{#itens}}
+        <li>{{ descricao }} - {{ quantidade }} x {{ preco }}</li>
+    {{/itens}}
+    </ul>
+</body>
+</html>
